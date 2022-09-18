@@ -1,13 +1,13 @@
-import { Box , Text} from "@chakra-ui/react"
+import { Box, Text } from '@chakra-ui/react'
 
 function ShoppyApp() {
   return (
-    <Box bg="background">
+    <Box bg='background'>
       <Text fontSize='50px' color='text'>
-          Hello World
+        Hello World
       </Text>
     </Box>
   )
 }
 
-export default ShoppyApp;
+export default ShoppyApp
