@@ -6,7 +6,7 @@ const config = {
 }
 
 const colors = {
-  background: '#FFE789',
+  background: '#011627',
   text: '#f0f',
 }
 
