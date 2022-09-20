@@ -1,13 +1,7 @@
-import { Box, Text } from '@chakra-ui/react'
+import { AppRouter } from './router/AppRouter'
 
 function ShoppyApp() {
-  return (
-    <Box bg='background'>
-      <Text fontSize='50px' color='text'>
-        Hello World
-      </Text>
-    </Box>
-  )
+  return <AppRouter />
 }
 
 export default ShoppyApp
