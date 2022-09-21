@@ -7,7 +7,6 @@ const config = {
 
 const colors = {
   background: '#011627',
-  text: '#f0f',
 }
 
 const theme = extendTheme({ config, colors })

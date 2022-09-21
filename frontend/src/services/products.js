@@ -1,17 +1,17 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://127.0.0.1:8000/api/users/'
+const BASE_URL = 'http://127.0.0.1:8000/api/products/'
 
-export const getUsers = async () => {
+export const getProducts = async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:8000/api/users')
+    const response = await axios.get(BASE_URL)
     return response.data
   } catch (error) {
     console.log(error)
   }
 }
 
-export const getUser = async (id) => {
+export const getProduct = async (id) => {
   try {
     const response = await axios.get(`${BASE_URL}${id}`)
     return response.data
@@ -20,9 +20,9 @@ export const getUser = async (id) => {
   }
 }
 
-export const createUser = async (user) => {
+export const createProduct = async (product) => {
   try {
-    const response = await axios.post(`${BASE_URL}`, user)
+    const response = await axios.post(`${BASE_URL}`, product)
     console.log(response.data)
     return response.data
   } catch (error) {
