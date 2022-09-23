@@ -39,9 +39,32 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'API',
+    "corsheaders",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://\w+\.localhost\.3000$",
+    r"^https://\w+\.localhost\.5173$",
+    r"^https://\w+\.localhost\.8080$",
+    r"^https://\w+\.localhost\.9000$",
+]
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+    "http://localhost:5173",
+    "http://localhost:3000",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
