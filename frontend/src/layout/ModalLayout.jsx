@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 // eslint-disable-next-line react/prop-types
-export const ModalLayout = ({ children, titleButton, title }) => {
+export const ModalLayout = ({ children, title, handleSubmit }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = useRef()
 
@@ -40,7 +40,9 @@ export const ModalLayout = ({ children, titleButton, title }) => {
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme='blue'>Submit</Button>
+            <Button colorScheme='blue' type='onSubmit' onClick={handleSubmit}>
+              Submit
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
