@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export const AppLayout = ({ children }) => {
   return (
-    <Box bg='background' ml='5%' mr='5%' mt='10rem' p='2rem' borderRadius='md'>
+    <Box bg='background' ml='5%' mr='5%' mt='5rem' p='2rem' borderRadius='md'>
       <Tabs size='md' variant='enclosed'>
         <TabList>
           <Link to='/products'>
