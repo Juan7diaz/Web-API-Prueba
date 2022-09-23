@@ -7,6 +7,7 @@ export const TableHead = ({ data = [] }) => {
   return (
     <Thead>
       <Tr>
+        <Th>See More</Th>
         {arrTitle.map((item) => (
           <Th key={item}>{item}</Th>
         ))}

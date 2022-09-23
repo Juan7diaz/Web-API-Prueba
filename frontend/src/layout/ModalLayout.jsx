@@ -8,8 +8,10 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Button,
+  IconButton,
   useDisclosure,
 } from '@chakra-ui/react'
+import { AddIcon } from '@chakra-ui/icons'
 
 // eslint-disable-next-line react/prop-types
 export const ModalLayout = ({ children, title, handleSubmit }) => {
@@ -18,13 +20,15 @@ export const ModalLayout = ({ children, title, handleSubmit }) => {
 
   return (
     <>
-      <Button
-        colorScheme='teal'
+      <IconButton
         variant='outline'
-        color='white'
-        onClick={onOpen}>
-        +
-      </Button>
+        colorScheme='blue'
+        aria-label='Add product'
+        fontSize='10px'
+        size='sm'
+        onClick={onOpen}
+        icon={<AddIcon />}
+      />
       <Drawer
         size='sm'
         isOpen={isOpen}

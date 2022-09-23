@@ -18,6 +18,7 @@ class orderSerializer(serializers.ModelSerializer):
         fields = '__all__'
     def to_representation(self, instance):
         return {
+            'id': instance.id,
             'orderNumber': instance.orderNumber,
             'userId': instance.user.id,
             'userName':  instance.user.name,

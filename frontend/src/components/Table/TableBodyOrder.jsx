@@ -1,12 +1,26 @@
-import { Tbody, Td, Tr } from '@chakra-ui/react'
-import PropTypes from 'prop-types'
+import { LinkBox, Tbody, Td, Tr, IconButton } from '@chakra-ui/react'
+import { InfoIcon } from '@chakra-ui/icons'
+import { Link } from 'react-router-dom'
 
 // eslint-disable-next-line react/prop-types
 export const TableBodyOrder = ({ data = [] }) => {
   return (
     <Tbody>
       {data.map((item) => (
-        <Tr key={item.orderNumber}>
+        <LinkBox as={Tr} key={item.id}>
+          <Td>
+            <Link to={`/orders/${item.id}`}>
+              <IconButton
+                aria-label='add product'
+                variant='outline'
+                colorScheme='blue'
+                fontSize='10px'
+                size='sm'
+                icon={<InfoIcon />}
+              />
+            </Link>
+          </Td>
+          <Td>{item.id}</Td>
           <Td>{item.orderNumber}</Td>
           <Td>{item.userId}</Td>
           <Td>{item.userName}</Td>
@@ -16,12 +30,8 @@ export const TableBodyOrder = ({ data = [] }) => {
           <Td>{item.productName}</Td>
           <Td>{item.price}</Td>
           <Td>{item.quantity}</Td>
-        </Tr>
+        </LinkBox>
       ))}
     </Tbody>
   )
-}
-
-PropTypes.TableBodyOrder = {
-  data: PropTypes.array.isRequired,
 }
