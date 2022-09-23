@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getOrders } from '../services/orders'
 import { TableGeneric } from '../components/Table/TableGeneric'
-import { DrawerOrder } from '../components/Drawer/DrawerOrder'
 import { TableBodyOrder } from '../components/Table/TableBodyOrder'
 
 export const OrdersPage = () => {
@@ -21,7 +20,6 @@ export const OrdersPage = () => {
     <>
       {orders.length > 0 ? (
         <>
-          <DrawerOrder />
           <TableGeneric data={orders} caption={caption}>
             <TableBodyOrder data={orders} />
           </TableGeneric>
