@@ -16,8 +16,8 @@ export const DrawerProduct = () => {
 
   const handleSubmit = () => {
     const errors = validateProduct({ name, price, code })
-    const hasErros = Object.entries(errors).length === 0
-    if (hasErros) {
+    const hasErros = Object.entries(errors).length !== 0
+    if (!hasErros) {
       createProduct({ name, code, price })
       navigate('/') // solución temporal para que cargue el nuevo producto
     } else {
