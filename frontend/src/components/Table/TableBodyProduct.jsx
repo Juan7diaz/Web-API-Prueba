@@ -1,5 +1,4 @@
 import { LinkBox, Tbody, Td, Tr, IconButton } from '@chakra-ui/react'
-import { IconButton } from '../IconButton/IconButton'
 import { Link } from 'react-router-dom'
 import { InfoIcon } from '@chakra-ui/icons'
 
