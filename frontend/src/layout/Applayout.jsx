@@ -1,5 +1,4 @@
 import { Box, Tabs, TabList, Tab } from '@chakra-ui/react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 export const AppLayout = ({ children }) => {
@@ -18,8 +17,4 @@ export const AppLayout = ({ children }) => {
       <Box pt='0.5rem'>{children}</Box>
     </Box>
   )
-}
-
-AppLayout.propTypes = {
-  children: PropTypes.element.isRequired,
 }

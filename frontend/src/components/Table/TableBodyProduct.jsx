@@ -1,9 +1,8 @@
 import { LinkBox, Tbody, Td, Tr, IconButton } from '@chakra-ui/react'
-import PropTypes from 'prop-types'
+import { IconButton } from '../IconButton/IconButton'
 import { Link } from 'react-router-dom'
 import { InfoIcon } from '@chakra-ui/icons'
 
-// eslint-disable-next-line react/prop-types
 export const TableBodyProduct = ({ data = [] }) => {
   return (
     <Tbody>
@@ -30,8 +29,4 @@ export const TableBodyProduct = ({ data = [] }) => {
       ))}
     </Tbody>
   )
-}
-
-PropTypes.TableBodyProduct = {
-  data: PropTypes.array.isRequired,
 }

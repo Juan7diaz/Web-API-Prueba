@@ -13,8 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { AddIcon } from '@chakra-ui/icons'
 
-// eslint-disable-next-line react/prop-types
-export const ModalLayout = ({ children, title, handleSubmit }) => {
+export const DrawerLayout = ({ children, title, handleSubmit }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = useRef()
 

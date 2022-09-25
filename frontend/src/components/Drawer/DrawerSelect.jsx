@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Select, FormLabel } from '@chakra-ui/react'
 
-// eslint-disable-next-line react/prop-types
 export const DrawerSelect = ({ onInputChange, name, label, getData, placeholder }) => {
   const [data, setData] = useState([])
 

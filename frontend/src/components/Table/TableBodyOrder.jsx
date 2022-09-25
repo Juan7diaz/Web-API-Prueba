@@ -2,7 +2,6 @@ import { LinkBox, Tbody, Td, Tr, IconButton } from '@chakra-ui/react'
 import { InfoIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 
-// eslint-disable-next-line react/prop-types
 export const TableBodyOrder = ({ data = [] }) => {
   return (
     <Tbody>

@@ -8,7 +8,6 @@ import { useForm } from '../../hooks/useForm'
 import { validateOrder } from '../../helpers/validateOrder'
 import { createOrders } from '../../services/orders'
 
-// eslint-disable-next-line react/prop-types
 export const DrawerOrder = ({ loadOrders }) => {
   const { onInputChange, product, user, orderNumber, quantity } = useForm({
     quantity: 1,

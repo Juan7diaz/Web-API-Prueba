@@ -4,7 +4,6 @@ import { useForm } from '../../hooks/useForm'
 import { createProduct } from '../../services/products'
 import { validateProduct } from '../../helpers/ValidateProduct'
 
-/* eslint-disable react/prop-types */
 export const DrawerProduct = ({ loadProducts }) => {
   const { onInputChange, name, price, code } = useForm({
     name: '',
