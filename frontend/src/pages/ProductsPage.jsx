@@ -7,11 +7,11 @@ import { TableBodyProduct } from '../components/Table/TableBodyProduct'
 export const ProductsPage = () => {
   const [products, setProducts] = useState([])
 
+  const loadProducts = async () => {
+    const response = await getProducts()
+    setProducts(response)
+  }
   useEffect(() => {
-    const loadProducts = async () => {
-      const response = await getProducts()
-      setProducts(response)
-    }
     loadProducts()
   }, [])
 
@@ -21,7 +21,7 @@ export const ProductsPage = () => {
     <>
       {products.length > 0 ? (
         <>
-          <DrawerProduct />
+          <DrawerProduct loadProducts={loadProducts} />
           <TableGeneric data={products} caption={caption}>
             <TableBodyProduct data={products} />
           </TableGeneric>

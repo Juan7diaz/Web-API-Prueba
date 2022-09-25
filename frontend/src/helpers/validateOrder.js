@@ -15,11 +15,11 @@ export const validateOrder = ({ quantity, orderNumber, product, user }) => {
   }
 
   if (!isIdProductValid) {
-    errors.idProduct = 'Product id must be greater than 0'
+    errors.product = 'A product must be selected'
   }
 
   if (!isIdUserValid) {
-    errors.idUser = 'User id must be greater than 0'
+    errors.user = 'A user must be selected'
   }
 
   return errors

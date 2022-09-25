@@ -1,27 +1,41 @@
-import { Stack, Box, FormLabel, Input } from '@chakra-ui/react'
+import { Stack, Box, FormLabel, Input, useToast } from '@chakra-ui/react'
 import { ModalLayout } from '../../layout/ModalLayout'
 import { useForm } from '../../hooks/useForm'
 import { createProduct } from '../../services/products'
-import { useNavigate } from 'react-router-dom'
 import { validateProduct } from '../../helpers/ValidateProduct'
 
-export const DrawerProduct = () => {
-  const navigate = useNavigate()
-
+/* eslint-disable react/prop-types */
+export const DrawerProduct = ({ loadProducts }) => {
   const { onInputChange, name, price, code } = useForm({
     name: '',
     price: '',
     code: '',
   })
 
+  const toast = useToast()
+
   const handleSubmit = () => {
     const errors = validateProduct({ name, price, code })
     const hasErros = Object.entries(errors).length !== 0
     if (!hasErros) {
       createProduct({ name, code, price })
-      navigate('/') // solución temporal para que cargue el nuevo producto
+      loadProducts()
+      toast({
+        title: 'Created product',
+        description: 'A new product has been added to the list.',
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
+      })
     } else {
       console.error(errors)
+      toast({
+        title: 'Error when adding a new product',
+        description: errors.name || errors.price || errors.code,
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+      })
     }
   }
 

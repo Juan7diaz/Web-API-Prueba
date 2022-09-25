@@ -7,12 +7,12 @@ import { DrawerOrder } from '../components/Drawer/DrawerOrder'
 export const OrdersPage = () => {
   const [orders, setOrders] = useState([])
 
+  const loadOrders = async () => {
+    const response = await getOrders()
+    setOrders(response)
+  }
   useEffect(() => {
-    const loadProducts = async () => {
-      const response = await getOrders()
-      setOrders(response)
-    }
-    loadProducts()
+    loadOrders()
   }, [])
 
   const caption = 'List of all orders placed'
@@ -21,7 +21,7 @@ export const OrdersPage = () => {
     <>
       {orders.length > 0 ? (
         <>
-          <DrawerOrder />
+          <DrawerOrder loadOrders={loadOrders} />
           <TableGeneric data={orders} caption={caption}>
             <TableBodyOrder data={orders} />
           </TableGeneric>

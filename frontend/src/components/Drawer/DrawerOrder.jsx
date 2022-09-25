@@ -3,12 +3,13 @@ import { DrawerSelect } from './DrawerSelect'
 import { getProducts } from '../../services/products'
 import { getRandomNumber } from '../../helpers/getRandomNumber'
 import { ModalLayout } from '../../layout/ModalLayout'
-import { Stack, Box, FormLabel, Input } from '@chakra-ui/react'
+import { Stack, Box, FormLabel, Input, useToast } from '@chakra-ui/react'
 import { useForm } from '../../hooks/useForm'
 import { validateOrder } from '../../helpers/validateOrder'
 import { createOrders } from '../../services/orders'
 
-export const DrawerOrder = () => {
+// eslint-disable-next-line react/prop-types
+export const DrawerOrder = ({ loadOrders }) => {
   const { onInputChange, product, user, orderNumber, quantity } = useForm({
     quantity: 1,
     orderNumber: getRandomNumber(8),
@@ -16,13 +17,30 @@ export const DrawerOrder = () => {
     user: '',
   })
 
+  const toast = useToast()
+
   const handleSubmit = () => {
     const errors = validateOrder({ quantity, orderNumber, product, user })
     const hasErros = Object.entries(errors).length !== 0
     if (!hasErros) {
       createOrders({ user, product, quantity, orderNumber })
+      loadOrders()
+      toast({
+        title: 'New order created',
+        description: 'A new order has been successfully added to the list',
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
+      })
     } else {
       console.error(errors)
+      toast({
+        title: 'Error when creating a new order',
+        description: errors.product || errors.user || errors.quantity,
+        status: 'error',
+        duration: 4000,
+        isClosable: true,
+      })
     }
   }
 
