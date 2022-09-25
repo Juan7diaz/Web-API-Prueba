@@ -1,5 +1,5 @@
 import { Stack, Box, FormLabel, Input, useToast } from '@chakra-ui/react'
-import { ModalLayout } from '../../layout/ModalLayout'
+import { DrawerLayout } from '../../layout/DrawerLayout'
 import { useForm } from '../../hooks/useForm'
 import { createProduct } from '../../services/products'
 import { validateProduct } from '../../helpers/ValidateProduct'
@@ -40,7 +40,7 @@ export const DrawerProduct = ({ loadProducts }) => {
 
   return (
     <>
-      <ModalLayout title='Add a new product' handleSubmit={handleSubmit}>
+      <DrawerLayout title='Add a new product' handleSubmit={handleSubmit}>
         <Stack spacing='24px'>
           <Box>
             <FormLabel>Product name</FormLabel>
@@ -71,7 +71,7 @@ export const DrawerProduct = ({ loadProducts }) => {
             />
           </Box>
         </Stack>
-      </ModalLayout>
+      </DrawerLayout>
     </>
   )
 }

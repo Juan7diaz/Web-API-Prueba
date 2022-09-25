@@ -2,7 +2,7 @@ import { getUsers } from '../../services/users'
 import { DrawerSelect } from './DrawerSelect'
 import { getProducts } from '../../services/products'
 import { getRandomNumber } from '../../helpers/getRandomNumber'
-import { ModalLayout } from '../../layout/ModalLayout'
+import { DrawerLayout } from '../../layout/DrawerLayout'
 import { Stack, Box, FormLabel, Input, useToast } from '@chakra-ui/react'
 import { useForm } from '../../hooks/useForm'
 import { validateOrder } from '../../helpers/validateOrder'
@@ -45,7 +45,7 @@ export const DrawerOrder = ({ loadOrders }) => {
 
   return (
     <>
-      <ModalLayout title='Add a new product' handleSubmit={handleSubmit}>
+      <DrawerLayout title='Add a new product' handleSubmit={handleSubmit}>
         <Stack spacing='24px'>
           <Box>
             <DrawerSelect
@@ -86,7 +86,7 @@ export const DrawerOrder = ({ loadOrders }) => {
             />
           </Box>
         </Stack>
-      </ModalLayout>
+      </DrawerLayout>
     </>
   )
 }
