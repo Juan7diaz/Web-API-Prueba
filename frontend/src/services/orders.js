@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const BASE_URL = 'http://127.0.0.1:8000/api/orders/'
 
+// trae un array de pedidos
 export const getOrders = async () => {
   try {
     const response = await axios.get(BASE_URL)
@@ -11,6 +12,7 @@ export const getOrders = async () => {
   }
 }
 
+// traer un pedido por id
 export const getOrder = async (id) => {
   try {
     const response = await axios.get(`${BASE_URL}${id}`)
@@ -20,6 +22,7 @@ export const getOrder = async (id) => {
   }
 }
 
+// crear un pedido
 export const createOrders = async (user) => {
   try {
     const response = await axios.post(`${BASE_URL}`, user)

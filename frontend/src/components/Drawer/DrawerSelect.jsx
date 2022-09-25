@@ -4,6 +4,7 @@ import { Select, FormLabel } from '@chakra-ui/react'
 export const DrawerSelect = ({ onInputChange, name, label, getData, placeholder }) => {
   const [data, setData] = useState([])
 
+  // traemos los datos ya sea de pedidos o productos segun la funcion que nos pase por props
   useEffect(() => {
     const loadData = async () => {
       const response = await getData()
@@ -12,6 +13,7 @@ export const DrawerSelect = ({ onInputChange, name, label, getData, placeholder 
     loadData()
   }, [])
 
+  // hacemos un select y eviamos el id (del pedido o producto) con <onChange={onInputChange}>
   return (
     <>
       <FormLabel>{label}</FormLabel>

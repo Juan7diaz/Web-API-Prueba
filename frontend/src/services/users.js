@@ -2,6 +2,8 @@ import axios from 'axios'
 
 const BASE_URL = 'http://127.0.0.1:8000/api/users/'
 
+// estas funciones no se están usando actualmente
+
 export const getUsers = async () => {
   try {
     const response = await axios.get(BASE_URL)

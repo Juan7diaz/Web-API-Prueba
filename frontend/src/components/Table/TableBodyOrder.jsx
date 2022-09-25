@@ -3,6 +3,7 @@ import { InfoIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 
 export const TableBodyOrder = ({ data = [] }) => {
+  // cuerpo de tabla para visualizar los pedidos
   return (
     <Tbody>
       {data.map((item) => (

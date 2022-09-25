@@ -4,6 +4,7 @@ import { ProductsPage } from '../pages/ProductsPage'
 import { ShowMore } from '../pages/ShowMore'
 
 export const AppRouter = () => {
+  // Son todas las rutas y accesos que tiene la aplicación
   return (
     <Routes>
       <Route path='/orders' element={<OrdersPage />} />

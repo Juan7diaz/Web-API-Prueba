@@ -19,11 +19,15 @@ export const DrawerOrder = ({ loadOrders }) => {
   const toast = useToast()
 
   const handleSubmit = () => {
+    // obetenmos las validaciones
     const errors = validateOrder({ quantity, orderNumber, product, user })
     const hasErros = Object.entries(errors).length !== 0
+
+    // vemos si hacer la peticion post o lanzar un toast de error dependiendo de las validaciones
+    // TODO: hacer que se cierre automaticamente cuando se haga el post
     if (!hasErros) {
       createOrders({ user, product, quantity, orderNumber })
-      loadOrders()
+      loadOrders() // todo: A veces actualiza, a veces no
       toast({
         title: 'New order created',
         description: 'A new order has been successfully added to the list',

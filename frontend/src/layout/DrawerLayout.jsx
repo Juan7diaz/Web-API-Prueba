@@ -17,6 +17,7 @@ export const DrawerLayout = ({ children, title, handleSubmit }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = useRef()
 
+  // crea el model del drawer donde el usuario ingresará los datos
   return (
     <>
       <IconButton

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { InfoIcon } from '@chakra-ui/icons'
 
 export const TableBodyProduct = ({ data = [] }) => {
+  // cuerpo de la tabla para visualizar los productos
   return (
     <Tbody>
       {data.map((item) => (

@@ -1,3 +1,4 @@
+// validaciones para el formulario de prodcutos
 export const validateProduct = ({ name, price, code }) => {
   const MAXIMUM_SIZE_ALLOWED = 20
   const DIGITS_MAXIMUM = 8

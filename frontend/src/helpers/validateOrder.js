@@ -1,3 +1,4 @@
+// validaciones para el formulario de pedidos
 export const validateOrder = ({ quantity, orderNumber, product, user }) => {
   const errors = {}
 
